@@ -1,19 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import Comment from "./Comment";
+import {getComments} from "../service/useService";
+
 const Comments = ({name}) => {
 
-    const [comments,setComments] = useState([]);
+    const [comments, setComments] = useState([]);
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/comments')
-            .then(response => response.json())
-            .then(responce => setComments(responce))
+        getComments().then(response => setComments(response))
     }, [])
 
     return (
         <div>
             <h1 className={'tag'}>{name}</h1>
             <hr/>
-            {comments.map(comment=> <Comment key={comment.id} comment={comment} />)}
+            {comments.map(comment => <Comment key={comment.id} comment={comment}/>)}
 
         </div>
     );

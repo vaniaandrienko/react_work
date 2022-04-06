@@ -1,23 +1,22 @@
 import React, {useEffect, useState} from 'react';
 import Post from "./Post";
+import {getPosts} from "../service/useService";
 
 const Posts = ({name}) => {
-    
+
 
     const [posts, setPosts] = useState([]);
 
-        useEffect(() => {
-            fetch('https://jsonplaceholder.typicode.com/posts')
-                .then(response => response.json())
-                .then(responce => setPosts(responce))
-        }, [])
-        return (
-            <div>
-                <h1 className={'tag'}>{name}</h1>
-                <hr/>
-                {posts.map(post => <Post key={post.id} post={post} /> )}
-            </div>
-        );
-    };
+    useEffect(() => {
+        getPosts().then(response => setPosts(response))
+    }, [])
+    return (
+        <div>
+            <h1 className={'tag'}>{name}</h1>
+            <hr/>
+            {posts.map(post => <Post key={post.id} post={post}/>)}
+        </div>
+    );
+};
 
-    export default Posts;
+export default Posts;

@@ -5,7 +5,7 @@ import Comments from "./components/Comments";
 
 function App() {
     return (
-        <div class={'wrap'}>
+        <div className={'wrap'}>
             {/*<Actor*/}
             {/*    name={'Tom'}*/}
             {/*    img={"https://i.pinimg.com/474x/ba/74/6a/ba746a5ad203704cbac746f2c23314da.jpg"}*/}
@@ -16,12 +16,12 @@ function App() {
             {/*/>*/}
 
             <div className={'wrap2'}>
-                <div class={'users'}>< Users  name={'Users :'}/></div>
+                <div className={'users'}>< Users  name={'Users :'}/></div>
                 <hr/>
-                <div class={'posts'}><Posts name={'Posts :'}/></div>
+                <div className={'posts'}><Posts name={'Posts :'}/></div>
             </div>
             <hr/>
-            <div class={'comments'}><Comments name={'Comments :'}/></div>
+            <div className={'comments'}><Comments name={'Comments :'}/></div>
         </div>
     );
 }
