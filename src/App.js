@@ -1,27 +1,29 @@
+import {Users} from "./components";
+import css from './App.module.css'
+import SingleUser from "./components/SingleUser/SingleUser";
+import {useState} from "react";
 import './App.css'
-import Users from "./components/Users";
-import Posts from "./components/Posts";
-import Comments from "./components/Comments";
+import {Posts} from "./components";
 
-function App() {
+const App = () => {
+    const [singleUser, setSingleUser] = useState(null);
+
     return (
-        <div className={'wrap'}>
-            {/*<Actor*/}
-            {/*    name={'Tom'}*/}
-            {/*    img={"https://i.pinimg.com/474x/ba/74/6a/ba746a5ad203704cbac746f2c23314da.jpg"}*/}
-            {/*/>*/}
-            {/*<Actor*/}
-            {/*    name={'Jerry'}*/}
-            {/*    img={"https://upload.wikimedia.org/wikipedia/en/2/2f/Jerry_Mouse.png"}*/}
-            {/*/>*/}
+        <div>
+        <div className={'do'}>
+            <div>
+            <Users getUser={setSingleUser}/>
 
-            <div className={'wrap2'}>
-                <div className={'users'}>< Users  name={'Users :'}/></div>
-                <hr/>
-                <div className={'posts'}><Posts name={'Posts :'}/></div>
             </div>
-            <hr/>
-            <div className={'comments'}><Comments name={'Comments :'}/></div>
+            <div>
+
+            {singleUser && <SingleUser user={singleUser}/>}
+            </div>
+
+        </div>
+            <div>
+                <Posts/>
+            </div>
         </div>
     );
 }
