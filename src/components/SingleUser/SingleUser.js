@@ -1,17 +1,17 @@
 import React from 'react';
-import './SingleUser.css'
+import css from  './SingleUser.module.css'
 
-const SingleUser = ({user,getPost}) => {
+const SingleUser = ({user,setSinglePost}) => {
     const {id, name, username, email ,phone} = user;
 
     return (
-        <div className={'flex'}>
+        <div className={css.flex}>
             <div> Id : {id} </div>
             <div>Name : {name} </div>
             <div> Username : {username}</div>
             <div> Email : {email}</div>
             <div> Phone : {phone}</div>
-            <button onClick={()=>getPost(user)}>Click</button>
+            <button onClick={()=>setSinglePost(user.id)}>Click</button>
 
 
         </div>

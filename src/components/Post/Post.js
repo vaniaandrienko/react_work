@@ -4,7 +4,10 @@ const Post = ({post}) => {
     const {id, title, body} = post
     return (
         <div>
-            {id} -{title} - {body}
+            <div>Id: {id}</div>
+            <div>Title: {title}</div>
+            <div>Body: {body}</div>
+            <hr/>
 
         </div>
     );
