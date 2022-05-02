@@ -14,6 +14,15 @@ const getAll = createAsyncThunk(
         return data
     }
 );
+const deleteById = createAsyncThunk(
+    'carSlice/deleteById',
+    async ({id},{dispatch,rejectWithValue,}) => {
+        const {data} = await carService.getAll();
+        return data
+    }
+);
+
+
 
 const create = createAsyncThunk(
     'create',
